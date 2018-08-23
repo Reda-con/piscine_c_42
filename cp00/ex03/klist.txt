@@ -1,0 +1,6 @@
+Credentials cache: API:8B768B47-9CF0-4806-8B88-BD4622AA8BDE
+        Principal: reda-con@42.FR
+
+  Issued                Expires               Principal
+Jul 30 10:20:28 2018  Aug  6 10:20:28 2018  krbtgt/42.FR@42.FR
+Jul 30 10:55:22 2018  Aug  6 10:20:28 2018  host/vgs-fn1.42.fr@42.FR
