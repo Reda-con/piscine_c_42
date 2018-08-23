@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill2.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daphan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/11 15:50:34 by daphan            #+#    #+#             */
+/*   Updated: 2018/08/11 23:23:57 by reda-con         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "sudoku.h"
+
+void	back_track(char **sudoku, int x, int y, char **back_up)
+{
+	--y;
+	if (y < 0)
+	{
+		y = 8;
+		--x;
+	}
+	while (back_up[x][y] != '.')
+	{
+		y--;
+		if (y < 0)
+		{
+			y = 8;
+			--x;
+		}
+	}
+	if (sudoku[x][y] < '9')
+		sudoku[x][y]++;
+	else
+	{
+		sudoku[x][y] = '.';
+		back_track(sudoku, x, y, back_up);
+	}
+	fill_grid(sudoku, back_up);
+}
